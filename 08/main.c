@@ -10,6 +10,8 @@ int main(void) {
   printf("\n");
   pulse();pulse();pulse();
   printf("\n");
+
+  return 0;
 }
 
 void pulse(void){
