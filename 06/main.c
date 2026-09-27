@@ -7,7 +7,6 @@
 
 
 int main(void) {
-
   int age = 18;
   int days = age * days_in_year;
   int hours = days * hours_in_day;
