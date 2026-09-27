@@ -9,7 +9,9 @@
 int main(void) {
 
   int age = 18;
-  int days = age * 365, hours = days * 24, seconds = hours *3600;
+  int days = age * days_in_year;
+  int hours = days * hours_in_day;
+  int seconds = hours * seconds_in_hour;
 
   printf("Тики: %d|Часы: %d|Дни: %d|Годы: %d\n", seconds, hours, days, age);
 
