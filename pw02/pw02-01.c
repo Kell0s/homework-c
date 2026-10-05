@@ -8,7 +8,7 @@ int main(void) {
 
   scanf("%d %x %o", &unit_id, &unit_version, &unit_status);
 
-  printf("unit_id: %d\nUNIT_VERSION: %d\nUNIT_STATUS: %d\nSUM: %d\n",
+  printf("UNIT_ID: %d\nUNIT_VERSION: %d\nUNIT_STATUS: %d\nSUM: %d\n",
          unit_id,
          unit_version,
          unit_status,
