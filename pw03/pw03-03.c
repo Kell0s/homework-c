@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-
-int main(void){
+int main(void) {
   char name[20];
 
   scanf("%s", name);
@@ -10,9 +9,8 @@ int main(void){
   printf("\"%s\"\n"
          "\"%20s\"\n"
          "\"%-20s\"\n"
-         "\"%*s\"\n",
-         name, name, name,(int)strlen+5 , name);
+         "\"%*s%*s\"\n",
+         name, name, name, (int)strlen(name) + 5, name, 5, "");
 
   return 0;
 }
-
