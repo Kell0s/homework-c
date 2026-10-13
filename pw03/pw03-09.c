@@ -9,7 +9,7 @@ int main(void) {
   wprintf(L"Введите имя:");
   wscanf(L"%ls", name);
 
-  wprintf(L"Агент %ls авторизовант в системе\n", name);
+  wprintf(L"Агент %ls авторизован в системе\n", name);
 
   return 0;
 }

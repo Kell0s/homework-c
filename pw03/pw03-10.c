@@ -7,9 +7,9 @@ int main(void) {
   wchar_t core[50], reactor[50], init[50];
 
   wprintf(L"Введите три слова:\n");
-  wscanf(L"%s\n%s\n%s", core, reactor, init);
+  wscanf(L"%ls\n%ls\n%ls", core, reactor, init);
 
-  wprintf(L"%-15s|%20s|%.5s", core, reactor, init);
+  wprintf(L"%-15ls|%20ls|%.5ls\n", core, reactor, init);
 
   return 0;
 }
