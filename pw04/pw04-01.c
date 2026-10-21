@@ -1,12 +1,15 @@
 #include <stdio.h>
 
-#define MIN_IN_GRAD 60
+#define PA_IN_KPA 1000
 
 int main(void) {
-    int min;
+    int Pa;
 
-    while (scanf("%i", &min) == 1 && min > 0) {
-        printf("%i градуcов и %i минут\n", min / MIN_IN_GRAD, min % MIN_IN_GRAD);
+    int n = (111260148 % 30) + 1;
+    printf("Номер задания: %d\n", n);
+
+    while (scanf("%i", &Pa) == 1 && Pa > 0) {
+        printf("%i кПа и %i Па\n", Pa / PA_IN_KPA, Pa % PA_IN_KPA);
     }
 
     return 0;

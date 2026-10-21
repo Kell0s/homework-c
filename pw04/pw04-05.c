@@ -1,19 +1,23 @@
 #include <stdio.h>
 
-double k_to_c(double k);
+double kg_to_lb(double k);
 
 int main(void) {
     double k;
 
+    int K = 0;
+    int n = ((111260148 + (K + 23)) % 30) + 1;
+    printf("Номер задания: %d\n", n);
+
     while (scanf("%lf", &k) == 1) {
-        printf("%.2lf\n", (double)k_to_c(k));
+        printf("%.2lf\n", (double)kg_to_lb(k));
     }
 
     return 0;
 }
 
-double k_to_c(double k) {
-    const double C_TO_F = k - 273.15;
+double kg_to_lb(double kg) {
+    const double KG_TO_LB = 2.205;
 
-    return (C_TO_F);
+    return (kg * KG_TO_LB);
 }
