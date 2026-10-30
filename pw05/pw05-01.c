@@ -10,7 +10,7 @@ int main(void) {
     int n = 1;
     double e = 2.718;
 
-    for (double a = 0; a < b; a += 0.5) {
+    for (double a = 0; a <= b; a += 0.5) {
         printf("%d | %.4f | %.4f\n", n, a, pow(e, a));
         n++;
     }
