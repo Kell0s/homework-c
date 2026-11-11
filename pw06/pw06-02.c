@@ -4,17 +4,15 @@
 int main(void) {
     setlocale(LC_ALL, "");
 
-    wchar_t i = 0;
+    wint_t i;
+    wint_t temp = 0;
     int cnt = 0;
 
-    while (i != L'#') {
-
-        wchar_t temp = i;
-        i = getwchar();
-
+    while ((i = getwchar()) != WEOF && i != L'#') {
         if (temp == L'е' && i == L'й') {
             cnt++;
         }
+        temp = i;
     }
     wprintf(L"Количество \"ей\": %d\n", cnt);
     return 0;

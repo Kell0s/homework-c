@@ -3,6 +3,9 @@
 int main(void) {
     int i;
     int a;
+    unsigned int h;
+    int r;
+    int c;
 
     while (1) {
         printf("Выбери пункт:\n"
@@ -12,9 +15,14 @@ int main(void) {
                "4. hex -> dec\n"
                "5. exit\n");
 
-        if (scanf("%d", &i) != 1) {
+        r = scanf("%d", &i);
+
+        if (r == EOF) {
+            printf("\n");
+            return 0;
+        } else if (r != 1) {
             printf("Вы указали не число\n");
-            while (getchar() != '\n') {
+            while ((c = getchar()) != '\n' && c != EOF) {
             }
             continue;
         } else if (i < 1 || i > 5) {
@@ -24,41 +32,72 @@ int main(void) {
             switch (i) {
             case 1:
                 printf("Введите число: ");
-                if (scanf("%d", &a) == 1) {
+                r = scanf("%d", &a);
+                if (r == 1) {
                     printf("Перевод: %x\n", a);
+                } else if (r == EOF) {
+                    printf("\n");
+                    return 0;
                 } else {
                     printf("Вы указали не число\n");
-                    while (getchar() != '\n') {
+                    while ((c = getchar()) != '\n' && c != EOF) {
                     }
                 }
                 break;
             case 2:
                 printf("Введите число: ");
-                if (scanf("%d", &a) == 1) {
+                r = scanf("%d", &a);
+                if (r == 1) {
                     printf("Перевод: %o\n", a);
+                } else if (r == EOF) {
+                    printf("\n");
+                    return 0;
                 } else {
                     printf("Вы указали не число\n");
-                    while (getchar() != '\n') {
+                    while ((c = getchar()) != '\n' && c != EOF) {
                     }
                 }
                 break;
             case 3:
                 printf("Введите число: ");
-                if (scanf("%d", &a) == 1) {
-                    printf("Перевод: %b\n", a);
+                r = scanf("%d", &a);
+                if (r == 1) {
+                    unsigned int u = a;
+                    int bits[32];
+                    int n = 0;
+
+                    do {
+                        bits[n] = u % 2;
+                        u /= 2;
+                        n++;
+                    } while (u > 0);
+
+                    printf("Перевод: ");
+                    while (n > 0) {
+                        n--;
+                        printf("%d", bits[n]);
+                    }
+                    printf("\n");
+                } else if (r == EOF) {
+                    printf("\n");
+                    return 0;
                 } else {
                     printf("Вы указали не число\n");
-                    while (getchar() != '\n') {
+                    while ((c = getchar()) != '\n' && c != EOF) {
                     }
                 }
                 break;
             case 4:
                 printf("Введите число: ");
-                if (scanf("%x", &a) == 1) {
-                    printf("Перевод: %d\n", a);
+                r = scanf("%x", &h);
+                if (r == 1) {
+                    printf("Перевод: %u\n", h);
+                } else if (r == EOF) {
+                    printf("\n");
+                    return 0;
                 } else {
                     printf("Вы указали не число\n");
-                    while (getchar() != '\n') {
+                    while ((c = getchar()) != '\n' && c != EOF) {
                     }
                 }
                 break;

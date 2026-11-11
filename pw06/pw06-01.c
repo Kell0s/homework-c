@@ -1,20 +1,17 @@
 #include <ctype.h>
 #include <stdio.h>
-#include <uchar.h>
 
 int main(void) {
-    char16_t i = 0;
+    int i;
     int cnt = 0;
 
-    while (i != '#') {
-        i = (char16_t)getchar();
-
+    while ((i = getchar()) != EOF && i != '#') {
         if (isxdigit(i)) {
             cnt++;
         }
     }
 
-    printf("16-ичных циф: %d", cnt);
+    printf("16-ичных цифр: %d\n", cnt);
     return 0;
 }
 
